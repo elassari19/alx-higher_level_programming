@@ -1,5 +1,29 @@
 #!/usr/bin/python3
 
+def mul(a, b):
+    """ multiplication func
+
+    Args:
+        a: first number
+        b: second number
+
+    Returns:
+        return multiplication result
+    """
+    return (a * b)
+
+
+def div(a, b):
+    """ division func
+
+    Args:
+        a: first number
+        b: second number
+
+    Returns:
+        return division result
+    """
+    return int(a / b)
 
 def add(a, b):
     """addition func
@@ -25,29 +49,3 @@ def sub(a, b):
         return subtraction result
     """
     return (a - b)
-
-
-def mul(a, b):
-    """ multiplication func
-
-    Args:
-        a: first number
-        b: second number
-
-    Returns:
-        return multiplication result
-    """
-    return (a * b)
-
-
-def div(a, b):
-    """ division func
-
-    Args:
-        a: first number
-        b: second number
-
-    Returns:
-        return division result
-    """
-    return int(a / b)
