@@ -6,8 +6,7 @@ class Rectangle:
     """properties class"""
 
     number_of_instances = 0
-    print_symbol = '#'
-    # public
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """init method.
@@ -102,5 +101,5 @@ class Rectangle:
 
     def __del__(self):
         """del"""
+        print("{:s}".format("Bye rectangle..."))
         Rectangle.number_of_instances -= 1
-        print('Bye rectangle...')
