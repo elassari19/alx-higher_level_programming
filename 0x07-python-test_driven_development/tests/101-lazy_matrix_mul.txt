@@ -1,0 +1,108 @@
+# 101-lazy_matrix_mul module
+============================================
+import 101-lazy_matrix_mul.py
+============================================
+
+importing lazy_matrix_mul.
+    >>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+    >>> m_a = [[1, 2], [3, 4]]
+    >>> m_b = [[1, 2], [3, 4]]
+    >>> lazy_matrix_mul(m_a, m_b)
+    array([[ 7, 10],
+           [15, 22]])
+
+    >>> m_a = [[1, 2]]
+    >>> m_b = [[3, 4], [5, 6]]
+    >>> lazy_matrix_mul(m_a, m_b)
+    array([[13, 16]])
+
+    >>> m_a = ([1, 2], [3, 4])
+    >>> m_b = [[1, 2], [3, 4]]
+    >>> lazy_matrix_mul(m_a, m_b)
+    array([[ 7, 10],
+           [15, 22]])
+
+    >>> m_a = "1"
+    >>> m_b = [[1, 2], [3, 4]]
+    >>> lazy_matrix_mul(m_a, m_b)
+    Traceback (most recent call last):
+        ...
+    ValueError: Scalar operands are not allowed, use '*' instead
+
+    >>> m_a = [2, [3, 4]]
+    >>> m_b = [[1, 2], [3, 4]]
+    >>> lazy_matrix_mul(m_a, m_b)
+    Traceback (most recent call last):
+        ...
+    ValueError: setting an array element with a sequence.
+
+    >>> m_a = []
+    >>> m_b = [[1, 2], [3, 4]]
+    >>> lazy_matrix_mul(m_a, m_b)
+    Traceback (most recent call last):
+        ...
+    ValueError: shapes (0,) and (2,2) not aligned: 0 (dim 0) != 2 (dim 0)
+
+    >>> m_a = [[]]
+    >>> m_b = [[1, 2], [3, 4]]
+    >>> lazy_matrix_mul(m_a, m_b)
+    Traceback (most recent call last):
+        ...
+    ValueError: shapes (1,0) and (2,2) not aligned: 0 (dim 1) != 2 (dim 0)
+
+    >>> m_a = [[1, 2], [3, 4]]
+    >>> m_b = []
+    >>> lazy_matrix_mul(m_a, m_b)
+    Traceback (most recent call last):
+        ...
+    ValueError: shapes (2,2) and (0,) not aligned: 2 (dim 1) != 0 (dim 0)
+
+    >>> m_a = [[1, "b"], [3, 4]]
+    >>> m_b = [[1, 2], [3, 4]]
+    >>> lazy_matrix_mul(m_a, m_b)
+    Traceback (most recent call last):
+        ...
+    TypeError: invalid data type for einsum
+
+    >>> lazy_matrix_mul(None, None)
+    Traceback (most recent call last):
+    	...
+    TypeError: Object arrays are not currently supported
+
+    >>> lazy_matrix_mul([[3, 4]], None)
+    Traceback (most recent call last):
+        ...
+    TypeError: Object arrays are not currently supported
+
+    >>> m_a = [[2, 2, 2], [4, 4, 4]]
+    >>> m_b = [[2], [3, 3]]
+    >>> lazy_matrix_mul(m_a, m_b)
+    Traceback (most recent call last):
+        ...
+    ValueError: setting an array element with a sequence.
+
+    >>> m_a = [[1, 2, 3], [4, 5, 6]]
+    >>> m_b = [[1, 2], [3, 4,]]
+    >>> lazy_matrix_mul(m_a, m_b)
+    Traceback (most recent call last):
+        ...
+    ValueError: shapes (2,3) and (2,2) not aligned: 3 (dim 1) != 2 (dim 0)
+
+    >>> lazy_matrix_mul([[1, 2]])
+    Traceback (most recent call last):
+        ...
+    TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
+
+    >>> lazy_matrix_mul()
+    Traceback (most recent call last):
+        ...
+    TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+    >>> m_a = [[1, 2], [3, 4]]
+    >>> m_b = [[1, 2], [3, 4]]
+    >>> m_c = [[4, 5], [7, 8]]
+    >>> lazy_matrix_mul(m_a, m_b, m_c) #doctest: +ELLIPSIS
+    Traceback (most recent call last):
+        ...
+    TypeError: lazy_matrix_mul() takes 2 positional arguments but ...

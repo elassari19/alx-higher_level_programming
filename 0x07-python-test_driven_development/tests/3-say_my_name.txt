@@ -1,0 +1,43 @@
+# 3-say_my_name module
+============================================
+import 3-say_my_name.py
+============================================
+
+importing say_my_name.
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+    >>> say_my_name("Wendy", "Munyasi")
+    My name is Wendy Munyasi
+
+    >> say_my_name("Breezy")
+    My name is Breezy
+
+    >>> say_my_name("Wendy", None)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+    >>> say_my_name(None, None)
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name(None, "Breezy")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name(1, "Breezy")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name("Chris", [4])
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+    >>> say_my_name("Chris", "Breezy", "Brown") #doctest: +ELLIPSIS
+    Traceback (most recent call last):
+        ...
+    TypeError: say_my_name() takes from 1 to 2 positional arguments but ...
