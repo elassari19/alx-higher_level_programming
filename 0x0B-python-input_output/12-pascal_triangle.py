@@ -15,6 +15,6 @@ def pascal_triangle(n):
         return [[1]]
 
     pascal = [[1]]
-    for item in range(n - 1):
+    for i in range(n - 1):
         pascal.append([x + n for x, n in zip(pascal[-1] + [0], [0] + pascal[-1])])
     return (pascal)
