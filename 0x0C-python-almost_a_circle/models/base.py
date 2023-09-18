@@ -20,9 +20,9 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """ to_json_string """
-        new = []
+        new_list = []
         if list_dictionaries is None:
-            return (new)
+            return (new_list)
         else:
             return (json.dumps(list_dictionaries))
 
@@ -30,41 +30,41 @@ class Base:
     def save_to_file(cls, list_objs):
         """ save_to_file """
         file = "{}.json".format(cls.__name__)
-        new = []
+        new_list = []
         with open(file, 'w') as f:
             if list_objs is None:
                 f.write("[]")
             for obj in list_objs:
-                new.append(obj.to_dictionary())
-            f.write(cls.to_json_string(new))
+                new_list.append(obj.to_dictionary())
+            f.write(cls.to_json_string(new_list))
 
     @staticmethod
     def from_json_string(json_string):
         """ from_json_string """
-        lst = []
+        new_list = []
         if json_string is None:
-            return (lst)
+            return (new_list)
         return (json.loads(json_string))
 
     @classmethod
     def create(cls, **dictionary):
         """ create """
         if cls.__name__ == "Rectangle":
-            new_c = cls(1, 1)
+            new_class = cls(1, 1)
         if cls.__name__ == "Square":
-            new_c = cls(1)
-        new_c.update(**dictionary)
-        return (new_c)
+            new_class = cls(1)
+        new_class.update(**dictionary)
+        return (new_class)
 
     @classmethod
     def load_from_file(cls):
         """ load_from_file """
-        new_l = []
+        new_list = []
         rtn_empty = []
         file = "{}.json".format(cls.__name__)
         if path.isfile(file):
             with open(file, 'r') as f:
-                new_l = cls.from_json_string(f.read())
-            for val in new_l:
+                new_list = cls.from_json_string(f.read())
+            for val in new_list:
                 rtn_empty.append(cls.create(**val))
             return (rtn_empty)
