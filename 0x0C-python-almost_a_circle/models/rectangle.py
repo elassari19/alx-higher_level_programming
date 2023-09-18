@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """defines classe"""
-
-
 from models.base import Base
 
 
@@ -15,7 +13,7 @@ class Rectangle(Base):
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """__init__
+        """ construnctor
         Args:
             width: int
             height: int
@@ -31,8 +29,7 @@ class Rectangle(Base):
 
     def __str__(self):
         """__str__"""
-        return ("[Rectangle] ({}) {:d}/{:d} - {:d}/{:d}".
-                format(self.id, self.__x, self.__y, self.__width, self.__height))
+        return ("[Rectangle] ({}) {:d}/{:d} - {:d}/{:d}". format(self.id, self.__x, self.__y, self.__width, self.__height))
 
     @property
     def width(self):
@@ -91,10 +88,8 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """set x
-
         Args:
             value: int
-
         Raises:
             TypeError: is not an integer
             ValueError: is less than or equal to zero
