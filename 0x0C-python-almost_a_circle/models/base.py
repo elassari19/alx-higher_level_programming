@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""defines class"""
+
+
 import json
 import os.path
 import csv
@@ -6,6 +9,10 @@ import turtle
 
 
 class Base:
+    """Base
+     Attributes:
+        id: int
+    """
     __nb_objects = 0
 
     def __init__(self, id=None):
