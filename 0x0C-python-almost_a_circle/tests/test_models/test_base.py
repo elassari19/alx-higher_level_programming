@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" """
+"""defin class"""
 import unittest
 import pep8
 import os
@@ -9,10 +9,10 @@ from models.square import Square
 
 
 class TestBase(unittest.TestCase):
-    """
+    """TestBase
     """
     def test_pep8_base(self):
-        """
+        """test_pep8_base
         """
         syntax = pep8.StyleGuide(quit=True)
         check = syntax.check_files(['models/base.py'])
@@ -22,7 +22,7 @@ class TestBase(unittest.TestCase):
         )
 
     def test_id_as_positive(self):
-        """
+        """test_id_as_positive
         """
         base_instance = Base(115)
         self.assertEqual(base_instance.id, 115)
@@ -30,7 +30,7 @@ class TestBase(unittest.TestCase):
         self.assertEqual(base_instance.id, 67)
 
     def test_id_as_negative(self):
-        """
+        """test_id_as_negative
         """
         base_instance = Base(-91)
         self.assertEqual(base_instance.id, -91)
@@ -38,7 +38,7 @@ class TestBase(unittest.TestCase):
         self.assertEqual(base_instance.id, -4)
 
     def test_id_as_none(self):
-        """
+        """test_id_as_none
         """
         base_instance = Base()
         self.assertEqual(base_instance.id, 1)
@@ -46,13 +46,15 @@ class TestBase(unittest.TestCase):
         self.assertEqual(base_instance.id, 2)
 
     def test_string_id(self):
+        """test_string_id
+        """
         base_instance = Base('Monty Python')
         self.assertEqual(base_instance.id, 'Monty Python')
         base_instance = Base('Python is cool')
         self.assertEqual(base_instance.id, 'Python is cool')
 
     def test_to_json_string(self):
-        """
+        """test_to_json_string
         """
         rect_instance = Rectangle(10, 7, 2, 8, 70)
         rect_data = re1.to_dictionary()
@@ -60,7 +62,7 @@ class TestBase(unittest.TestCase):
         self.assertEqual(type(json_data), str)
 
     def test_empty_to_json_string(self):
-        """
+        """test_empty_to_json_string
         """
         empty_data = []
         json_data = Base.to_json_string(empty_data)
@@ -71,14 +73,14 @@ class TestBase(unittest.TestCase):
         self.assertEqual(json_data, "[]")
 
     def test_instance(self):
-        """
+        """test_instance
         """
         base_instance = Base()
         self.assertEqual(type(base_instance), Base)
         self.assertTrue(isinstance(base_instance, Base))
 
     def test_to_json_string(self):
-        """
+        """test_to_json_string
         """
         rect_data = {'id': 31, 'x': 14, 'y': 11, 'width': 3, 'height': 3}
         json_data = Base.to_json_string([rect_data])
@@ -91,7 +93,7 @@ class TestBase(unittest.TestCase):
         )
 
     def test_wrong_to_json_string(self):
-        """
+        """test_wrong_to_json_string
         """
         json_data = Base.to_json_string(None)
         self.assertEqual(json_data, "[]")
@@ -112,7 +114,7 @@ class TestBase(unittest.TestCase):
         self.assertEqual(warn, str(msg.exception))
 
     def test_wrong_save_to_file(self):
-        """
+        """test_wrong_save_to_file
         """
         with self.assertRaises(AttributeError) as msg:
             Base.save_to_file([Base(1), Base(2)])
@@ -123,7 +125,7 @@ class TestBase(unittest.TestCase):
         )
 
     def test_load_from_file(self):
-        """
+        """test_load_from_file
         """
         if os.path.exists("Base.json"):
             os.remove("Base.json")
@@ -148,7 +150,7 @@ class TestBase(unittest.TestCase):
         self.assertEqual(warn, str(msg.exception))
 
     def test_create(self):
-        """
+        """test_create
         """
         with self.assertRaises(TypeError) as msg:
             warn = Rectangle.create('Monty Python')
