@@ -7,7 +7,7 @@ from models.base import Base
 
 class Rectangle(Base):
     """Rectangle
-     Attributes:
+    Attributes:
         width: int
         height: int
         x: int
@@ -45,10 +45,8 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """set width
-
         Args:
             value: int
-
         Raises:
             TypeError: is not integer
             ValueError: is less than or equal to zero

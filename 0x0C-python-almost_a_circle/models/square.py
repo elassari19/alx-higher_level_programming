@@ -82,11 +82,16 @@ class Square(Rectangle):
         Returns:
             dict: dict
         """
-        dict1 = self.__dict__
-        dict2 = {}
-        dict2['id'] = dict1['id']
-        dict2['size'] = dict1['_Rectangle__width']
-        dict2['x'] = dict1['_Rectangle__x']
-        dict2['y'] = dict1['_Rectangle__y']
+        a_dict = {"id": 0, "size": 0, "x": 0, "y": 0}
+        for key in a_dict:
+            if key == "id":
+                a_dict[key] = self.id
+            elif key == "size":
+                a_dict[key] = self.width
+                a_dict[key] = self.height
+            elif key == "x":
+                a_dict[key] = self.x
+            elif key == "y":
+                a_dict[key] = self.y
 
-        return dict2
+        return a_dict
