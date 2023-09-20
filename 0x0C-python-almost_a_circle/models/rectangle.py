@@ -19,10 +19,7 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, width):
-        if type(width) != int:
-            raise TypeError("width must be an integer")
-        if width <= 0:
-            raise ValueError("width must be > 0")
+        self.validation_of_setters("width", width, false)
         self.__width = width
 
     @property
@@ -31,10 +28,7 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, height):
-        if type(height) != int:
-            raise TypeError("heigth must be an integer")
-        if height <= 0:
-            raise ValueError("heigth must be > 0")
+        self.validation_of_setters("height", height, false)
         self.__height = height
 
     @property
@@ -43,10 +37,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, x):
-        if type(x) != int:
-            raise TypeError("x must be an integer")
-        if x < 0:
-            raise ValueError("x must be >= 0")
+        self.validation_of_setters("x", x)
         self.__x = x
 
     @property
@@ -55,19 +46,16 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, y):
-        if type(y) != int:
-            raise TypeError("y must be an integer")
-        if y < 0:
-            raise ValueError("y must be >= 0")
+        self.validation_of_setters("y", y)
         self.__y = y
 
-    def validate_integer(self, name, value, eq=true):
-        """validate_integer"""
-        if eq and value < 0:
+    def validation_of_setters(self, name, value, equal=true):
+        """validation_of_setters"""
+        if equal and value < 0:
             raise TypeError("{} must be an integer".format(name))
         if type(value) != int:
             raise TypeError("{} must be >= 0".format(name))
-        if not eq and value <= 0:
+        if not equal and value <= 0:
             raise TypeError("{} must be > 0".format(name))
 
     def area(self):
