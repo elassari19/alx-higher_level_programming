@@ -61,6 +61,15 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y = y
 
+    def validation_of_setters(self, name, value, equal=true):
+        """validation_of_setters"""
+        if equal and value < 0:
+            raise TypeError("{} must be an integer".format(name))
+        if type(value) != int:
+            raise TypeError("{} must be >= 0".format(name))
+        if not equal and value <= 0:
+            raise TypeError("{} must be > 0".format(name))
+
     def area(self):
         """  Returself """
         return (self.__width * self.__height)
