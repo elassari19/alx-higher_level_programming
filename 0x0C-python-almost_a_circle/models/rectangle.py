@@ -61,13 +61,13 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y = y
 
-    def validation_of_setters(self, name, value, equal=true):
-        """validation_of_setters"""
-        if equal and value < 0:
+    def validate_integer(self, name, value, eq=true):
+        """validate_integer"""
+        if eq and value < 0:
             raise TypeError("{} must be an integer".format(name))
         if type(value) != int:
             raise TypeError("{} must be >= 0".format(name))
-        if not equal and value <= 0:
+        if not eq and value <= 0:
             raise TypeError("{} must be > 0".format(name))
 
     def area(self):
