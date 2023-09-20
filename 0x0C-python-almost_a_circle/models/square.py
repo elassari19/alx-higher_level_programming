@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """defines classe"""
 from models.rectangle import Rectangle
-from inspect import classify_class_attrs
-from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
