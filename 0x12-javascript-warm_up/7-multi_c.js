@@ -13,7 +13,7 @@
 
 const str = 'C is fun';
 
-if(typeof process.argv[2] === Number) {
+if (!isNaN(process.argv[2])) {
   for (let i = 0; i < parseInt(process.argv[2]); i++) {
     console.log(str);
   }

@@ -11,8 +11,8 @@
 */
 
 function add (a, b) {
-  if(isNaN(a) || isNaN(b)) {
-    return "NaN"
+  if (isNaN(a) || isNaN(b)) {
+    return 'NaN';
   }
 
   return parseInt(a) + parseInt(b);

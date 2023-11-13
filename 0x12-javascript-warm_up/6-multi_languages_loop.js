@@ -15,4 +15,4 @@
 
 const languages = ['C is fun', 'Python is cool', 'Javascript is amazing'];
 
-languages.map(lang => console.log(lang))
+languages.map(lang => console.log(lang));
