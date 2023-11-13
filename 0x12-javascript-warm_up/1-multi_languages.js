@@ -10,4 +10,4 @@
   sould print three line string
 */
 
-console.log('C is fun\nPython is cool\nJavascript is amazing');
+console.log('C is fun', '\nPython is cool', '\nJavascript is amazing');

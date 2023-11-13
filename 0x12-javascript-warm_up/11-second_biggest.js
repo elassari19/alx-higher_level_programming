@@ -13,8 +13,6 @@
 if (process.argv.length < 4) {
   console.log(0);
 } else {
-  const listNumbers = process.argv.map(Number)
-    .slice(2, process.argv.length)
-    .sort((a, b) => a - b);
-  console.log(listNumbers[listNumbers.length - 2]);
+  const listIntagers = process.argv.sort().reverse();
+  console.log(listIntagers[1]);
 }
