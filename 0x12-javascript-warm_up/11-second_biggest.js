@@ -13,6 +13,6 @@
 if (process.argv.length === 2 || process.argv.length === 3) {
   console.log(0);
 } else {
-  const listIntagers = process.argv.sort().reverse();
-  console.log(listIntagers[1]);
+  const listIntagers = process.argv.sort();
+  console.log(listIntagers[listIntagers.length - 1]);
 }
