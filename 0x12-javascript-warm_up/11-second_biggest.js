@@ -10,9 +10,9 @@
   sould searches the second biggest integer
 */
 
-if (process.argv.length <= 3) {
+if (process.argv.length < 4) {
   console.log(0);
 } else {
-  const biggestSecondIntager = process.argv.sort().reverse()[1];
-  console.log(biggestSecondIntager);
+  const listIntagers = process.argv.sort().reverse();
+  console.log(listIntagers[1]);
 }
