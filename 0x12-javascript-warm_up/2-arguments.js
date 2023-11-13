@@ -10,8 +10,9 @@
   sould print a message
 */
 
-if (process.argv.length < 2) {
-  console.log('No argument');
-} else {
-  console.log('Arguments found');
-}
+const message = process.argv.length === 2
+  ? 'No argument' : process.argv.length === 3
+  ? 'Argument found'
+  : 'Arguments found'
+
+console.log(message);
