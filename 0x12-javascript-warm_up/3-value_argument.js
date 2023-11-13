@@ -9,8 +9,9 @@
   sould print print the first argument
 */
 
-if (process.argv.length > 1) {
-  console.log(process.argv[2]);
-} else {
+const arg = process.argv[2];
+if (arg === undefined) {
   console.log('No argument');
+} else {
+  console.log(arg);
 }
