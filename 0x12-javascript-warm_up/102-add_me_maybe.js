@@ -8,7 +8,7 @@
   sould increments and calls a function
 */
 
-export const addMeMaybe = (number, theFunction) => {
+exports.addMeMaybe = (number, theFunction) => {
   number++;
   theFunction(number);
 };
