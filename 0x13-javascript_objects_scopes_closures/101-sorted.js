@@ -9,12 +9,19 @@
 // shoulld computes a dictionary of user ids by occurrence
 
 const dictionary = require('./101-data').dict;
-const new_dictionary = {};
 
-for (const key in dictionary) {
-  if (new_dictionary[dictionary[key]] === undefined) {
-    new_dictionary[dictionary[key]] = [];
+let new_dictionary_list = {'1': [], '2': [] , '3': []};
+const len = Object.getOwnPropertyNames(dictionary).length
+
+for (let i = 1; i< len; i++) {
+  for (const property in dictionary) {
+    if (i == dictionary[property]) {
+      new_dictionary_list = {
+        ...new_dictionary_list,
+        [i]: [...new_dictionary_list[`${i}`], property]
+      }
+    }
   }
-  new_dictionary[dictionary[key]].push(key);
 }
-console.log(new_dictionary);
+
+console.log(new_dictionary_list);
