@@ -9,12 +9,12 @@
 // shoulld computes a dictionary of user ids by occurrence
 
 const dictionary = require('./101-data').dict;
-const new_dictionary = {};
+const newdictionary = {};
 
 for (const key in dictionary) {
-  if (new_dictionary[dictionary[key]] === undefined) {
-    new_dictionary[dictionary[key]] = [];
+  if (newdictionary[dictionary[key]] === undefined) {
+    newdictionary[dictionary[key]] = [];
   }
-  new_dictionary[dictionary[key]].push(key);
+  newdictionary[dictionary[key]].push(key);
 }
-console.log(new_dictionary);
+console.log(newdictionary);
