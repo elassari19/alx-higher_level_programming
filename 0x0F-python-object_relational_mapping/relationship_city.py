@@ -7,7 +7,7 @@ from relationship_state import Base, State
 
 
 class City(Base):
-    """Module of a city"""
+    """city"""
     __tablename__ = "cities"
     id = Column(Integer, primary_key=True)
     name = Column(String(128), nullable=False)
