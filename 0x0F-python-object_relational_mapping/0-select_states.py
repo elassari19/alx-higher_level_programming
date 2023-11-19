@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
 should lists all states from the database
 Your script should take 3 arguments
@@ -9,7 +8,6 @@ Results must be sorted in ascending order by states.id
 Results must be displayed as they are in the example below
 Your code should not be executed when imported
 """
-
 import MySQLdb
 from sys import argv
 
