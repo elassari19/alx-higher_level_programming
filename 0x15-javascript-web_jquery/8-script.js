@@ -1,0 +1,8 @@
+// should fetch api and return list of title of movies
+const $ = window.$;
+$.get('https://swapi-api.hbtn.io/api/films/?format=json', function (data) {
+  console.log(data);
+  data.results.forEach(film => {
+    $('UL#list_movies').append(film.title);
+  });
+});
